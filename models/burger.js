@@ -16,11 +16,14 @@ const burger = {
         orm.insertOne('burgers', column, value, function(res) {
             cb(res);
         });
+    },
+
+    updateOne: function(column, value, cb) {
+        orm.update('burgers', column, value, function(res) {
+            cb(res);
+        })
     }
-    
 };
-    // updateOne: function('burgers', column)
-    
     
   module.exports = burger;  
     
