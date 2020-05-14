@@ -1,13 +1,6 @@
 # HW Week 13 - Eat the Burgers!
 
-Eat the burgers is a burger logger application with MySQL, Node, Express, Handlebars and a customized ORM following a MVC pattern. To use this application locally, you must use the following command to install dependencies required:
-```
-npm install
-```
-Then run the application by using:
-```
-node server.js
-```
+EAT-DA-BURGER APP!  Follow the link and get devouring!  You can create your own burger names, and when the time comes, DEVOUR them by pressing their adjacent button!
 
 ## Technologies used:
 * Bootstrap
@@ -21,7 +14,7 @@ node server.js
 * mySQL Workbench
 
 ## Author
-* **Maximillian Cartwright**
+* **Randall Burgess**
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
