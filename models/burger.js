@@ -1,41 +1,28 @@
 'use strict';
 
-const orm = require('../config/orm');
-
+const orm = require('../configuration/orm');
 
 const burger = {
-    
-    selectAll: function(cb) {
-        orm.selectAll('burgers', function(res) {
-            cb(res);
+    all: function (cb) {
+        orm.selectAll('burger', (result) => {
+            cb(result);
         });
     },
-    
-    
-    insertOne: function(column, value, cb) {
-        orm.insertOne('burgers', column, value, function(res) {
-            cb(res);
+    create: function (newValue, cb) {
+        orm.insertOne('burger', newValue, (result) => {
+            cb(result);
         });
     },
-
-    updateOne: function(column, value, cb) {
-        orm.update('burgers', column, value, function(res) {
-            cb(res);
+    updateDevour: function (burgerId, cb) {
+        orm.updateDevour('burger', burgerId, (result) => {
+            cb(result);
+        });
+    },
+    deleteOne: function (burgerId, cb) {
+        orm.deleteOne('burger', burgerId, (result) => {
+            cb(result);
         })
     }
 };
-    
-  module.exports = burger;  
-    
-    
-    
-    
-    
 
-
-
-
-
-
-
-
+module.exports = burger;

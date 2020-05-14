@@ -1,0 +1,25 @@
+body {
+    background-color: darkcyan;
+}
+
+.create-form-title {
+    background-color: #ffe2d6;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.available-burg-col{
+    background-color: #ffe2d6;
+}
+
+.devoured-burg-col{
+    background-color: #ffe2d6;
+}
+
+.devoured-item {
+    text-align: center;
+    border-bottom: tomato;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}

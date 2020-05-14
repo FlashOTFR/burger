@@ -1,35 +1,47 @@
-<div id="burgers">
-
-    <div id="notEaten">
-        <h2>EAT THESE BURGERS</h2>
-        <ul>
-            {{#each burgers}}
-            {{#unless devoured}}
-            {{> burgers/burger-block devoured=false}}
-            {{/unless}}
-            {{/each}}
-        </ul>
+<div class="container m-0 p-0">
+    <div class="row d-flex flex-column align-content-center">
+        <h1 class="mb-3"> Eat The Burger!</h1>
+        <div class="create-form-title p-2 mb-3">
+        <img class="d-flex align-self-center m-2"src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBUQEBIVFRUVGBUVFRUVFxUVFRYVFRUWFxYVFRcYHSggGBolGxUVITEiJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAPFy0fHR4rLS0tLS0tLS0rKystLS0tLS0tKy0tLSstLS0tKy0tLS0tLSsrLS0tLSstLS0rOC0tLf/AABEIAMIBAwMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAAAQIFAwQHBgj/xAA/EAABAwIDBQUFBgUDBQEAAAABAAIDBBEFITEGEkFRYRMicYGRBzKhsfAUI1JywdEzQlOC4RU0YnOSosLxJP/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EACIRAQEAAgMAAgIDAQAAAAAAAAABAhEDITESQQRRE2FxIv/aAAwDAQACEQMRAD8A6qhCFsgkIQpQEkJIBCEIBNCbQiWWMWCCoOl4D1Ru8ysbyRaYp3CN4LDJWRsyJHmsZxAcLFV/lWmFrcQtSOujOR7pWyVbHllLhYaFEFSWigQhCkCEkIBJCECQhCBIQhAkk0IIlRKmVEoMdkJoQZkk0kQEIQiCSTSUgTQhAFYH1I0bn4WstKvrrZDwWpRPMl3OddvTTJc/JnvprhgthJfllqeA81oVuIOPdjGuVybX8Ah7i/utyaOA49VmgpAFzZZ/p2YcP3VdHA8nPPwy+K22UXK/NWDYwFNgJWdrbUitfSE66p075Ycr7zeRzt4FWe4oujUbpZjetICsac+BW41ypMQp7C7Vt0NQS3P4FdfFydduHm4/jelmkosN1JdMu2AQhCkJCaSASTQgSSaECSTSQJRKmVEoIIQhShlSTSUASTSRAQhCAWCtks0i+vyWwqisfvu3b/8Az6+arndRbGdqqshMhto3lwt1vqt2nb3d0ZDRbU1OA0fWiwQrizrt4ZG7A0BZi5ajX2UnPKxrqkbQcpNetNshU+0Vdp+LbDkOK1hIjtU+SPgczbgrXpBbLjb4fqs73ZILLs3uLSbHoVpx3tlzTptQvv4rO03VR9psQfX/AArGmluuviy+nDnGwkmhdDMkJpIBJNCCKE0kCQhCBKJUlEoIITQpGRJCFCoSQhAIQhBGdxDSRyKr6eDO7vorfnOVlpuOWenFZclaYo1b7NPktSAZWSrJCZGsGgzPmsU1YGHdGTuoPwXJn3XbxdTaxjZzWUtC8w/agtdYtuOeVz1FlvUuMtlFxldZZTTowy34tg1S3Vrw1OVz6LC+tbbM2tl6FUaLAMCwSNKr48ciyztfT/K3Yq5h1vY8bGyfFX5SG95Wy11mEc1rTAEXacuanA/eYL9Vfj9Zc3itmcQ7n9cFc4Tnf0WjNTHWytcMbaPzK6+L1w8njbSTSXUxCEIQJCEIEkmkgEk0kCSKaRQQQhCkTQhJQgIQhEBCE0ShIy4VVI/MA6fNXkTVS4pCY3XaMjr0ubLLkn2vg1ibuLuaoNo6Kabday4F+8enK4zCv2uBLuYsD6BRiY4mxz+FvNcOfr0eKdR4Cv2MqnZsl7x9470jfIWOllhwzCKymeAxxOm8CSQc88jp4hdKNBzd6AfNOKiYD+pzKpcrWkwku2rT0EnZjveJIJJXksdlqWOLAPFwvn1tw06rpjW92yq6/DGyEnQniFS9LzLfTkU5qWG9pH3zyZkM+ViR6hWdBX1TQHEloBzD2nfAP8zS7Ij4r3H2GZhsGtI53/Q/usv2QOFpQB5m/lkPmrfPpX+Pd2yYGHmPvuJvxNh6WAW5CCG+BzWChja0FseizMn3QTlrZwP11U8d3WfNNYrCG50K3Imbosq6CujtkbD4eSsmHJdnFO3BmkkmkulkEIQpCQmkgSSaECSTSQJIppFBBCEKUJpIQoAhCEAmElOIZoMrRYLVxKLfjc0akFbZWjUYhG14i3hvG9gq5eVaXV283hDCxm669wXXvxzvf0IVtvgC61JhZxPmq/EK7davOy6j1sO626/FQ3IanIc1jw2OQuMjybi2ROVjwsqvDYi52+7Mn4DkFZVFQYsxm3K48OKpj2vn5p6WJ1wq/FN8glrt3d5cT1VadoGNt3hZOGvfPlazNb8XH9AmWlccftsUGKB3cdk4agqxLWuFjYrzWKUn8zcnDQj5HojC8VJ7rsiNR+o6KvjTW/F4WBuQy+tfrqq2sqHNv1cAOpt/grcE299fXVQqoxcPOe4LgcLk2uVOPXjPOS+o4VS70lyLDkNMtD9c16hVWGxWIPMXVqvR4Z08vku6Ek0lszCEIQCSEIEhCSASTSQJIppFBBCEIJIQhEBCEIkLPGLBYmDNam0GKtpYHSOOgy8VFQqdsdqG0jN1uch0H6lc1wzFnmqE0rnE31HC54X0VdiVc+eR0rzck+g5LWDrKlqXVabEGzlzozdrQAbg33ifCx0PqFWYwwkXHDd9NSqLY/EN1/ZkgB3PmcgB1JI9F6ydt2OHRcXPjrx6f4ufynagw/aCNsvZyHdJybe+fmr2erjeLbyp67BDJEHMsJGEPjJGW8M8+YyF1d4bUQzRgVMHZuLbXGYBv3s25i19TkqfTXK6vajGGsLt7faeNtPhdXNLXsYLb7cuq2v9Mw1znuEzLADITABpzuczflktOpNDHuiKMTv3WHukuB72ZLswOPoqXL9Eyl8la+I7RxtyDmnpfNV9HMZJA9otbXkRfRY6TZlr5HVM8bBI8g7jM2Ms0AAHU6a81c09O2Nlxx08OCjLTTHf2sqM29f3VjIQW7vgfK/+FUUbiSB5lTxjGIaUxvl/nPZjXxP7q2E3WfNZMbXrKZth5BZlrYdMHxte03a4BzSOIOYPotlenhP+Y8jL0kJpK6AkhCASTSQCSaSASTSQJRKkolBFCEIGhCEQaEIARLNEOK5V7TMXMkwgae6zM+K6vbJU82zVI9xe6JpJzJIVaOFpLuo2Wov6LPQKQ2Yo/wCiz0CjQ4ZBJuuDuRB9CukYdViaNj/xtz6OHvD1v6L1g2ao/wCiz0CrsewtkDGvhaGgHMDmcwfmsefj3i6PxuT45/6wQs3WgW0WGRjRmLc9M1npZBI1RdTHouOXXT040n0rC8P3GlwzBc2/jrot5gZbO3gAoupHkZ26Z/siCktqouS/9MkrbNyVNLJvOsNG/PkrfEJQ1luJ0/dVdIzhyWVG5StsL89brQ9qkTGYRG5+TzM17eebXDL+35q6wikNRLuj3G2Mh6fhvzK5t7b9o/tFWKWM/d0/dNtDIfe9BZvquv8AHx+3B+ZyTrGLz2O7YtMYoKh1iCewc45EONzGSeN728bLrC+SqJxGY4Lr+yPtPDGNirmudu5ds0Xdbh2jePiM+i7ccnA6qhYKCuiqIxLBI2Rh0c03HnyPQrOrhJKSSBJJpIBJNJAkIQUCKiVIqJQQKEIRCSEIQCyxBYlssFglSqtp650FM+RmrRcLlx27rvxN9P8AK6NtyL0UnguJKlHfdn6l0tPHI/VzQT6Kq28xSWmpw+I2NwM81YbKf7OL8o+Sofal/tR+YfNTR4yLbauLgDIMyBp1Xr9osafJVUeHxu7z2yVFQeUUcTyxpH/J4/8AELlYkDLPcbAG/jbPJWfs5xF9Zjj5ZfemhqGtHIBgDGjwaPmqW9VM6se4hmMbstFuMxIdCqHCartYGOd7wG4/87CWO+LSsNdEcyD1Xn2PXxyemGKDl53CwzY2wC+lvJeLe+Y5X+ayUlI73nknkCqWReZ7+l4al07r6DgOQVphlFJM7s4/7ncGjmeZ5BaOC0L6h/ZxjL+Zx0aP36LpGHULKeMMYPE8SeZV+Li+V3fGHPzzCanqi2pxOPCMOe9nvW3Y76vldoTz5no1fMVRI6R5c4kkkkk6knMk9V0z2zY6amqFMw/dwXBtoZT73oLN8d5c4bHYruk08y3d3Wamh5LepY7m1/Hjoo0zMrlZqR4u42OqlC9wWqqaV3aU8haeNtHDk5pyI8V0bBPaJE6zKxvZO/G0EsPlq34rl1PVLdhqQRmAfiplsHd6WqjlbvxPa9p4tIcPgsq4ZC7cO9DI+J3ON26r/D9sMRhyc9lQ3lIAx9uj2fqFaZDqaS8rhu3tLJlO18Dv+Y3o/J7eHiAvUQyte0PY4Oacw5pBB8CFbYaSkUlIihNJBEqJUiolBFJCEEk1FNEMkYzWVxUI8gglQlXbRQdpTSN5tK4K8WJHLJfRL2bwI55Lh+02EGKqkBIay5Nz14W5qMh17Zd4bRxEkABgJJyAFuK8D7S9saaVv2eD7wg3Lv5bjgPxLy2M7T1EsTadr92JoADRlew1dzXlJXkEk5nh4niotDqXuee8czw5NHReg9mTiMapCPxSDy7CVUTGi9yM+JW7gFe2jrIarM9k/eLcswWuaQD4OKqadO2kwx1BVvcB/wDnqnGRjuDJz/EiPLeI3hzuVgNU0tzXp8N26wqvZ2L3tG/k6GcBodfhc90nwN1gxrY6CNhkjnbGw5ATOyB1AEh4WHG5sNVz8nFb3HZw88k1k8nPWMJDRa54DVeiwLZmaoIdIDHH4Wc7wHBYYocOwFgrKt5nqZx922OzzuC38IEgbouLvJF72GtlgqfbRFb7ijeTx7WRrAPDcDr/AAUY8E9pn+TfMXTcPoI4GBkbQAPj1PMrU2kxZlJSy1DzYRtJ8XaNaOpJA81X7AbTyYpR/apIBDd7mNAdvhwba7gSBxuP7Sue+23aIPlZQRnKO0k1uLyO4zyB3j+ZvJbyOW3frm0k5lu5x71yXcbk5k+awbqTTY3CytZ6FSqnCNVlwyIkO/N8LBSpY79FmoSGucNEE5WkJRVFsrKFTVNBNjfwWv2wOYQXMM2V1sNq93l6n9lSMmspNqc7oPRNqeeS28OxCSF2/BIYyczu6O/M0913mF5ttZ1KkMQtxJQdawXbZj7NqgGO/qMv2Z/MMyz4jqF61jw4BzSCDmCDcEcwVwWmxNpyJtdWlFtu+iJbG7eB/kdmy/hwPgrTL9jsxSXPdmfahDO4R1bRCTpICTH4Ovm3xzHgugtcCAQbg5gjMEHiFeXYRUSplQKkQQhCBptCSnGEVZCVRY/tRTUZDHkvlOYiZm7xdwaOpWh7Qdqxh1P3LGeS7Ym625vI5D5rlETnNDpJXF0r+9I9xuSTwuq2peyxvb+dzC1gbED+Ekuty3v2C57XYg+Qkk34rDWVO+ctFquFhdV2lmY64PisUoyPNSj93xzSUDSleSMloyXabu7ytDGLqvxMaKEpMqGuBaMvFbrqqR0bYnyvexvuNc9zmtyz3Gk2b5KrbDcb10hIWjXmg2aqqdkN4kNyY25IaLkkAcBe5y5qdPVEscSMwD8lcYlsnVwUIrnt3WlzciMw12Qcb9beqpIQ4stbNxAAGpvkB5oPp+jqoMNwpjx/CggaRzcd0H/uc4+rl851lXJPK+aU3fI5z3n/AJONzbpwHRen2k2tdPh9NhwjfEYQ1sweb73YtDY7HUgnvG+haNdV5XdUCIKzRVFhukX5LFZIqRJznHU2HIJtFgsYkGimCgTyb5aqbDYKDDfP6ssmSIMy5rG6Za8smawmRBuuqFi7daskl1idKgt6SY95/wCEZeJ0/VVlTUkuvdZ3y7sAHF13H5D5fFV+qDegl3vNdE9me3bqaRtHVO+5cbMc4/wnHTP8BPprzXLY5N0qwks9u+3Ue8P1Uyj6tKgV432U7RGsouzkN5YLRuJ1cy3ccetgR/avZlay7GNCaEAsqhGFU7YYl9loZ5r2LWEN/M7ut+JSocd2qxX7bickl7xxd1nKzMh6m5VPUzF11r4X/Dc7i51vIf5KySLIazmXOSwyOzstl5stZouUS2bZAJKRUSg1au4zHBalQ3tG7w9Oq3Z8wsWH0UjzaNpdc2sFAr4nk2Z1XtvZtsT/AKjVd4HsYyHTO4WvlE3q63kL9F5rC8KmkqBEyMue5xaG24jW/K2d+Vl9RbFbPsw+jZA2xce/I78UjgN4+GQA6AIJbS4KypopqXdFnxua0cA63cPSzgD5L5Urd5ha0XDmnLmHD9br7Fe24Xz77W9mBT1zapgtHPvvI5SgguA6Hea7xug8fUzvleZJPedmeV+nRQQmiUSFjdETxWZRJQQEQGihKf5QspdYXSpYySXH66IHu2WvUTcFlnlVdM+6IG8m4rFGm5AOWOxJsOKkSpUYu8eZ9ASgyVj87DQAD0FlrtKUrrlQugyyMuLhFPUFjrj059FKCfdU54mvG9Hrxb+o/ZB0D2T4j2GIsDT93UNdGejrbzb9d4W/uXdivlPZvEzBMx9/de146FpB/RfU8EwkY2RuYcA4eDhcfNaY0SQhJWQys0Xh/bGT/pjv+pH/AOyEKL4OPYb/AAG+J+ZU3+99c0IWYxVCxtGn1xQhEshUHIQlGGVdO2Ep2fZ4nbjb5Z2F/VJCgev2co4hW1LxGwOszvBoDs2Z52vnYei9+hCBLjHt2J+0Uw4dm824ZvF/kPRCEHL0whCLJKJQhEMUnDxW033ShCIqsqStN6EIIsUm6H64hCEEWLLS+878rv0QhBrOUU0IEpsKEIMtWO+PBp8+a+mthXE4ZSE5/cx/JCFfD0XaEIVx/9k=" alt="burger" height="150" width="150">
+                
+                
+                <form class="text-center toonchee">
+                    <div class="form-group">
+                         <input type="text" id="burger-input" name="name">
+                    </div>
+                        <button type="submit" class="btn btn-danger" id="add-burg-btn">Add Burger</button>
+                </form>
+        </div>
     </div>
 
-    
-    <div id="eaten">
-        <h2>DEVOURED BURGERS</h2>
-        <ul>
-            {{#each burgers}}
-            {{#if devoured}}
-            {{> burgers/burger-block devoured=true}}
-            {{/if}}
-            {{/each}}
-        </ul>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3 d-flex flex-column align-items-center available-burg-col">
+            <h4>Available Burgers</h4>
+            <ul class="p-0">
+                {{#each burgersArr}}
+                {{#unless devoured}}
+                {{> burgers/burger-block}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+     
+<div class="col-md-2"></div>
+        <div class="col-md-3 d-flex flex-column align-items-center devoured-burg-col">
+            <h4>Devoured Burgers</h4>
+            <ol class="p-0">
+                {{#each burgersArr}}  
+                {{#if devoured}} 
+                {{> burgers/burger-block}}
+                {{/if}}
+                {{/each}}
+            </ol>
+        </div>
+
+<div class="col-md-2"></div>
     </div>
-
-    <form class="create-form">
-
-  <div class="form-group">
-    <label for="nb">New Burger Name:</label>
-    <input type="text" id="nb" name="new-burger">
-  </div>
-  <button type="submit">Add Burger</button>
-</form>
-
+     <div class="row footer">
+         <div class="col-md-12 m-3"></div>
+     </div>
 </div>

@@ -1,24 +1,30 @@
 {
-  "name": "burger",
+  "name": "eat-da-burger",
   "version": "1.0.0",
-  "description": "a burger app",
-  "main": "index.js",
+  "description": "You wanna make lists of burgs and then know when you devoured 'em. Welcome home.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "watch": "nodemon server",
+    "start": "node server.js",
+    "test:watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlashOTFR/burger.git"
+    "url": "git+https://github.com/maximilianc88/EAT-DA-BURGER.git"
   },
-  "author": "Randall Burgess",
+  "author": "M E Cartwright",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FlashOTFR/burger/issues"
+    "url": "https://github.com/maximilianc88/EAT-DA-BURGER/issues"
   },
-  "homepage": "https://github.com/FlashOTFR/burger#readme",
+  "homepage": "https://github.com/maximilianc88/EAT-DA-BURGER#readme",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
   }
 }
